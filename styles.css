@@ -13,15 +13,44 @@ body{
   align-items:center;
   justify-content:center;
   background:linear-gradient(180deg,var(--bg),#071125 120%);
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
-  color:var(--btn);
+.root{box-sizing:border-box}
+*{box-sizing:inherit}
+:root{--bg:#f6f7fb;--muted:#65748b;--accent:#0b6efd;--dark:#0b1b2b}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;padding:0;background:var(--bg);color:var(--dark);line-height:1.5}
+.container{max-width:1100px;margin:0 auto;padding:28px}
+.site-header{background:linear-gradient(90deg,#ffffffcc,#f7fbff);border-bottom:1px solid #e6eef8}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:700;color:var(--accent);text-decoration:none;font-size:1.25rem}
+.nav{display:flex;gap:18px;align-items:center}
+.nav a{color:var(--dark);text-decoration:none}
+.nav .cta{padding:8px 12px;border-radius:6px;background:var(--accent);color:#fff}
+.nav-toggle{display:none;background:transparent;border:1px solid #dbeafe;padding:6px 10px;border-radius:6px}
+.hero{padding:60px 0;background:linear-gradient(180deg,#eff7ff 0%,#ffffff 60%)}
+.hero-inner{display:flex;flex-direction:column;gap:18px}
+.hero-title{font-size:2.1rem;margin:0}
+.hero-sub{color:var(--muted);max-width:60%}
+.hero-cta{display:flex;gap:12px}
+.btn{display:inline-block;padding:12px 18px;border-radius:8px;text-decoration:none;border:1px solid transparent}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.ghost{background:transparent;border:1px solid #dbeafe;color:var(--accent)}
+.services{padding:36px 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 6px 18px rgba(11,27,43,0.06)}
+.about{padding:20px 0}
+.contact{padding:20px 0}
+form#contactForm{display:grid;gap:12px;max-width:560px}
+form label{display:flex;flex-direction:column;font-size:0.95rem}
+input,textarea{padding:10px;border:1px solid #e6eef8;border-radius:8px}
+.form-actions{margin-top:6px}
+.disclaimer{font-size:0.85rem;color:var(--muted);margin-top:12px}
+.site-footer{padding:18px 0;border-top:1px solid #e6eef8;background:#ffffff}
+
+@media (max-width:880px){
+  .grid{grid-template-columns:1fr}
+  .hero-sub{max-width:100%}
+  .nav{display:none}
+  .nav-toggle{display:inline-block}
 }
-.calculator{
-  width:340px;
-  background:var(--panel);
-  border-radius:12px;
-  padding:16px;
-  box-shadow:0 8px 30px rgba(2,6,23,0.7);
 }
 .display{
   height:72px;

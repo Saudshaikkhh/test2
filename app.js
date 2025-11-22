@@ -8,20 +8,40 @@ function updateDisplay() {
 }
 
 function safeEvaluate(input) {
-  // convert visible operators to JS ones
-  let s = input.replace(/×/g, '*').replace(/÷/g, '/');
-  // convert percent like 50% to (50/100)
-  s = s.replace(/(\d+(?:\.\d+)?)%/g, '($1/100)');
-  // allow only numbers, operators, parentheses, dot and spaces
-  if (!/^[0-9+\-*/().%\s]+$/.test(s)) throw new Error('Invalid characters');
-  // evaluate
-  // eslint-disable-next-line no-new-func
-  return Function('return ' + s)();
-}
+  // Small site JS: nav toggle and contact form handling for demo landing page
+  document.addEventListener('DOMContentLoaded', function () {
+    const navToggle = document.getElementById('navToggle');
+    const nav = document.querySelector('.nav');
+    const contactForm = document.getElementById('contactForm');
 
-buttons.addEventListener('click', (e) => {
-  const btn = e.target.closest('button');
-  if (!btn) return;
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        if (nav) nav.classList.toggle('open');
+      });
+    }
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const formData = new FormData(contactForm);
+        const name = formData.get('name') || 'Guest';
+        // In a real site you'd send this to a backend. Here we just show a demo message.
+        alert('Thanks, ' + name + '! Your message was received (demo).');
+        contactForm.reset();
+      });
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  });
   const action = btn.dataset.action;
   const val = btn.dataset.value;
 
