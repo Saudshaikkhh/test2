@@ -15,28 +15,72 @@
       <button class="btn function" data-action="back">←</button>
       <button class="btn function" data-action="percent">%</button>
       <button class="btn operator" data-value="/">÷</button>
-
-      <button class="btn" data-value="7">7</button>
-      <button class="btn" data-value="8">8</button>
-      <button class="btn" data-value="9">9</button>
-      <button class="btn operator" data-value="*">×</button>
-
-      <button class="btn" data-value="4">4</button>
-      <button class="btn" data-value="5">5</button>
-      <button class="btn" data-value="6">6</button>
-      <button class="btn operator" data-value="-">−</button>
-
-      <button class="btn" data-value="1">1</button>
-      <button class="btn" data-value="2">2</button>
-      <button class="btn" data-value="3">3</button>
-      <button class="btn operator" data-value="+">+</button>
-
-      <button class="btn zero" data-value="0">0</button>
-      <button class="btn" data-value=".">.</button>
-      <button class="btn equals" data-action="equals">=</button>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">CargoForce</a>
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="cta">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle">Menu</button>
     </div>
-  </div>
+  </header>
 
-  <script src="app.js" defer></script>
-</body>
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1 class="hero-title">Fast. Reliable. Global Logistics.</h1>
+        <p class="hero-sub">Streamlined freight, real-time tracking, and dedicated support—built for your business.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn primary">Get Started</a>
+          <a href="#services" class="btn ghost">Our Services</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services container">
+      <h2>Our Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Air Freight</h3>
+          <p>Fast international shipping with optimized routes.</p>
+        </div>
+        <div class="card">
+          <h3>Sea Freight</h3>
+          <p>Cost-effective ocean transport with reliable partners.</p>
+        </div>
+        <div class="card">
+          <h3>Warehousing</h3>
+          <p>Secure storage and fulfillment solutions near major hubs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about container">
+      <h2>Why CargoForce</h2>
+      <p>We combine industry expertise, modern tech, and a customer-first approach to deliver predictable supply-chain results.</p>
+    </section>
+
+    <section id="contact" class="contact container">
+      <h2>Contact Us</h2>
+      <form id="contactForm">
+        <label>Name<input type="text" name="name" required></label>
+        <label>Email<input type="email" name="email" required></label>
+        <label>Message<textarea name="message" rows="4"></textarea></label>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Send Message</button>
+        </div>
+      </form>
+      <p class="disclaimer">This is a demo landing page for `www.cargoforce.com` — not an official site.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; 2025 CargoForce (Demo). All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </html>
